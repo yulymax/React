@@ -1,10 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import NavBar from "./components/NavBar";
 
 function App() {
+  let style = {
+    backgroundColor: "#fff",
+  };
+  let condicion = false;
   return (
     <div className="App">
-      <header className="App-header">
+      <NavBar />
+      <header
+        style={{ backgroundColor: condicion ? "red" : "black" }}
+        className="App-header"
+      >
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
