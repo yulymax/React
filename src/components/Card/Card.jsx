@@ -16,6 +16,7 @@ const Card = ({
       <div className="card-body">
         <h5 className="card-title">{texto}</h5>
         <p className="card-text">{parrafo}</p>
+
         <button className={buttonStyle}>{buttonText}</button>
       </div>
     </div>

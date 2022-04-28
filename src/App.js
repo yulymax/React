@@ -1,15 +1,15 @@
 import Content from "./components/Content/Content";
 import Footer from "./components/Footer/Footer";
+import ItemCount from "./components/ItemCount/ItemCount";
 import NavBar from "./components/NavBar/Navbar";
-import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   return (
     <div>
       <NavBar />
       <div className="d-flex">
-        <Sidebar />
         <Content />
+        <ItemCount />
       </div>
 
       <Footer />
