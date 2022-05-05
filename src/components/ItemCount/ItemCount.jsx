@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import CicloDeVida from "../CicloDeVida/CicloDeVida";
-const ItemCount = ({ usuario }) => {
+// import CicloDeVida from "../CicloDeVida/CicloDeVida";
+const ItemCount = ({ stock, initial, onAdd }) => {
   const [contador, setContador] = useState(0);
-  const [nombre, setNombre] = useState("Julia");
-  const [ciclo, setCiclo] = useState(true);
+  // const [nombre, setNombre] = useState("Julia");
+  // const [ciclo, setCiclo] = useState(true);
 
   function sumar(params) {
     setContador(contador + 1);
@@ -29,7 +29,7 @@ const ItemCount = ({ usuario }) => {
         <h1>Contador : {contador}</h1>
         <button onClick={sumar}>sumar 1</button>
       </div>
-      <div>
+      {/* <div>
         <h1>{nombre}</h1>
         <button onClick={() => setNombre(usuario)}>Cambiar Nombre</button>
       </div>
@@ -37,7 +37,7 @@ const ItemCount = ({ usuario }) => {
       <div>
         {ciclo && <CicloDeVida />}
         <button onClick={() => setCiclo(false)}>Matar al Ciclo </button>
-      </div>
+      </div> */}
     </div>
   );
 };
