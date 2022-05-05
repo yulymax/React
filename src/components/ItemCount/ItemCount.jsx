@@ -1,43 +1,36 @@
 import React, { useState } from "react";
-import CicloDeVida from "../CicloDeVida/CicloDeVida";
-const ItemCount = ({ usuario }) => {
-  const [contador, setContador] = useState(0);
-  const [nombre, setNombre] = useState("Julia");
-  const [ciclo, setCiclo] = useState(true);
+const ItemCount = ({ stock, initial, onAdd }) => {
+  const [contador, setContador] = useState(initial);
 
-  function sumar(params) {
+  function sumar() {
     setContador(contador + 1);
   }
 
-  function restar(params) {
+  function restar() {
     if (contador > 1) {
       setContador(contador - 1);
     }
   }
 
+  function agregar() {
+    if (contador <= stock) {
+      onAdd(contador);
+    }
+  }
+
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          margin: "40px 0",
-          width: "500px",
-          justifyContent: "space-around",
-        }}
-      >
-        <button onClick={restar}>restar 1</button>
-        <h1>Contador : {contador}</h1>
-        <button onClick={sumar}>sumar 1</button>
-      </div>
-      <div>
-        <h1>{nombre}</h1>
-        <button onClick={() => setNombre(usuario)}>Cambiar Nombre</button>
-      </div>
+      <button onClick={restar} type="button" className="btn btn-default">
+        Restar
+      </button>
+      <span>{contador}</span>
+      <button onClick={sumar} type="button" className="btn btn-default  ">
+        Sumar
+      </button>
 
-      <div>
-        {ciclo && <CicloDeVida />}
-        <button onClick={() => setCiclo(false)}>Matar al Ciclo </button>
-      </div>
+      <button onClick={agregar} type="button" className="btn btn-primary">
+        Agregar al carrito
+      </button>
     </div>
   );
 };
