@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 
 const Item = ({ item }) => {
@@ -7,16 +8,18 @@ const Item = ({ item }) => {
   }
 
   return (
-    <div className="card" style={{ width: "18rem", margin: "1rem" }}>
-      <img src={item.pictureUrl} className="card-img-top" alt="..." />
+    <Link to={`/item/${item.id}`}>
+      <div className="card" style={{ width: "18rem", margin: "1rem" }}>
+        <img src={item.pictureUrl} className="card-img-top" alt="..." />
 
-      <div className="card-body">
-        <h5 className="card-title">{item.title}</h5>
-        <p className="card-text">{item.price}</p>
+        <div className="card-body">
+          <h5 className="card-title">{item.title}</h5>
+          <p className="card-text">{item.price}</p>
 
-        <ItemCount stock={5} initial={1} onAdd={onAdd} />
+          <ItemCount stock={5} initial={1} onAdd={onAdd} />
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
