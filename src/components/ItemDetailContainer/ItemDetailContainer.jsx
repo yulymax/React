@@ -9,9 +9,13 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     if (id) {
-      setTimeout(() => {
-        setItemDetail(listaItems.find((item) => item.id === id));
-      }, 2000);
+      const promise = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(listaItems.find((item) => item.id === id));
+        }, 2000);
+      });
+
+      promise.then((response) => setItemDetail(response));
     }
   }, [id]);
 

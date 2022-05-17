@@ -8,13 +8,17 @@ const ItemListContainer = ({ greeting }) => {
   const { id } = useParams();
 
   useEffect(() => {
-    setTimeout(() => {
-      if (id) {
-        setItems(listaItems.filter((item) => item.category === id));
-      } else {
-        setItems(listaItems);
-      }
-    }, 2000);
+    const promise = new Promise((resolve) => {
+      setTimeout(() => {
+        if (id) {
+          resolve(listaItems.filter((item) => item.category === id));
+        } else {
+          resolve(listaItems);
+        }
+      }, 2000);
+    });
+
+    promise.then((response) => setItems(response));
   }, [id]);
 
   return (
