@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import listaItems from "../../items";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [itemDetail, setItemDetail] = useState({});
@@ -9,13 +9,13 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     if (id) {
-      const promise = new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(listaItems.find((item) => item.id === id));
-        }, 2000);
+      const db = getFirestore();
+      const itemRef = doc(db, "Items", id);
+      getDoc(itemRef).then((snapshot) => {
+        if (snapshot.exists()) {
+          setItemDetail({ ...snapshot.data() });
+        }
       });
-
-      promise.then((response) => setItemDetail(response));
     }
   }, [id]);
 
