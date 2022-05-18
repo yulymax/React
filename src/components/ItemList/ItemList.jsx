@@ -3,7 +3,7 @@ import Item from "../Item/Item";
 
 const ItemList = ({ items }) => {
   return (
-    <div className="d-flex justify-content-evenly w-100">
+    <div className="row row-cols-1 row-cols-md-3 g-4">
       {items.map((item) => {
         return <Item item={item} />;
       })}

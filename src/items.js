@@ -2,42 +2,50 @@ const items = [
   {
     id: "1",
     title: "Arnes Kong",
-    price: "$12",
+    price: 10250,
     category: "Ropa",
     pictureUrl:
-      "https://i.pinimg.com/564x/ed/39/f4/ed39f46b2f0d57b53cb2d03cc5aeaf10.jpg",
+      "https://m.media-amazon.com/images/I/71afWAwT06L._AC_SL1000_.jpg",
   },
   {
     id: "2",
     title: "Campera de Lluvia",
-    price: "$9",
+    price: 3050,
     category: "Ropa",
     pictureUrl:
-      "https://i.pinimg.com/564x/ed/39/f4/ed39f46b2f0d57b53cb2d03cc5aeaf10.jpg",
+      "https://http2.mlstatic.com/D_NQ_NP_925583-MLA49344856654_032022-O.webp",
   },
   {
     id: "3",
     title: "Mordillo",
-    price: "$10",
+    price: 850,
     category: "Juguetes",
     pictureUrl:
-      "https://i.pinimg.com/564x/0b/4a/c5/0b4ac5b7587142fa19dea32b90e79cc4.jpg",
+      "https://cf.shopee.com.ar/file/c2914af89a50ca2b387f6152fbcb6064",
   },
   {
     id: "4",
     title: "Bocaditos de Pollo",
-    price: "$5",
+    price: 550,
     category: "Comidas",
     pictureUrl:
-      "https://i.pinimg.com/564x/0b/4a/c5/0b4ac5b7587142fa19dea32b90e79cc4.jpg",
+      "https://http2.mlstatic.com/D_NQ_NP_777953-MLA46873052616_072021-O.jpg",
   },
   {
     id: "5",
-    title: "Huesos de ciervo",
-    price: "$9",
+    title: "Huesos de Ciervo",
+    price: 950,
     category: "Comidas",
     pictureUrl:
-      "https://i.pinimg.com/564x/0b/4a/c5/0b4ac5b7587142fa19dea32b90e79cc4.jpg",
+      "https://st.depositphotos.com/1000589/2220/i/600/depositphotos_22206917-stock-photo-dog-isolated-on-white.jpg",
+  },
+  {
+    id: "6",
+    title: "Cama de Perros",
+    price: 4500,
+    category: "Ropa",
+    pictureUrl:
+      "https://http2.mlstatic.com/D_NQ_NP_962097-MCO46969610661_082021-V.jpg",
   },
 ];
 

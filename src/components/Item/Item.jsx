@@ -13,7 +13,7 @@ const Item = ({ item }) => {
   }
 
   return (
-    <div className="card" style={{ width: "18rem", margin: "1rem" }}>
+    <div className="card" style={{ width: "18rem", margin: "4rem" }}>
       <Link to={`/item/${item.id}`}>
         <img src={item.pictureUrl} className="card-img-top" alt="..." />
       </Link>
@@ -22,9 +22,10 @@ const Item = ({ item }) => {
         <Link to={`/item/${item.id}`}>
           <h5 className="card-title">{item.title}</h5>
         </Link>
-        <p className="card-text">{item.price}</p>
+        <p className="card-text">$ {item.price}</p>
 
         {!cantidadAgregada && <ItemCount stock={5} initial={1} onAdd={onAdd} />}
+        {cantidadAgregada && <Link to="/cart">Terminar mi compra</Link>}
       </div>
     </div>
   );

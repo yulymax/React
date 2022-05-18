@@ -12,13 +12,13 @@ const Rutas = () => {
           <Route
             index
             element={
-              <ItemListContainer greeting="¡Hola! 👋 Bienvenidx a nuestra tienda" />
+              <ItemListContainer greeting="¡Bienvenido a tienda PetAbby" />
             }
           />
           <Route
             path="/category/:id"
             element={
-              <ItemListContainer greeting="¡Hola! 👋 Bienvenidx a nuestra tienda" />
+              <ItemListContainer greeting="Hasta que no hayas amado a un animal parte de tu alma estara dormida" />
             }
           />
           <Route path="/item/:id" element={<ItemDetailContainer />} />

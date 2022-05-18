@@ -22,8 +22,8 @@ const ItemListContainer = ({ greeting }) => {
   }, [id]);
 
   return (
-    <div className="container">
-      <p className="lead">{greeting}</p>
+    <div className="container-fluid bg-secondary">
+      <p className="text-center fs-1 fw-bold">{greeting}</p>
       <ItemList items={items} />
     </div>
   );
