@@ -13,7 +13,7 @@ const CartWidget = () => {
   return (
     <div className="nav-item">
       <Link className="nav-link" to="/cart">
-        <button type="button" className="btn btn-primary">
+        <button type="button" className="btn btn-secondary">
           <img style={{ width: 20 }} src={cartLogo} />
           {total > 0 && <span>{total}</span>}
         </button>

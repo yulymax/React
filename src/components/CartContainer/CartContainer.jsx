@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../CartContext/CartContext";
 
 const CartContainer = () => {
-  const { cart, removeItem } = useContext(CartContext);
+  const { cart, removeItem, clear } = useContext(CartContext);
 
   const [nombre, setNombre] = useState("");
   const [telefono, setTelefono] = useState("");
@@ -30,46 +30,97 @@ const CartContainer = () => {
   };
 
   return (
-    <div>
-      {orderId && (
-        <div>Su orden fue creada con el identificador #{orderId}</div>
-      )}
+    <>
+      {orderId && <h2>Su orden fue creada con el identificador #{orderId}</h2>}
       {!orderId && cart.length > 0 && (
         <>
-          <ul>
-            <li>Cantidad | Descripcion | Precio Unitario | Subtotal</li>
-            {cart.map((item) => (
-              <li>
-                {item.quantity}x {item.title} $ {item.price} $
-                {item.price * item.quantity}
-                <button onClick={() => removeItem(item.id)}>Eliminar</button>
-              </li>
-            ))}
-            <li>Total: $ {total}</li>
-          </ul>
-          <form>
-            <label>Nombre</label>
-            <input
-              type="text"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
-            />
-            <label>Telefono</label>
-            <input
-              type="text"
-              value={telefono}
-              onChange={(e) => setTelefono(e.target.value)}
-            />
-            <label>Email</label>
-            <input
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <button type="submit" onClick={crearOrden}>
-              Crear orden
-            </button>
-          </form>
+          <table className="table table-striped ">
+            <thead>
+              <tr>
+                <th scope="col ">Cantidad</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Precio Unitario</th>
+                <th scope="col">Subtotal</th>
+                <th scope="col">Opcion</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cart.map((item) => (
+                <tr>
+                  <td>{item.quantity}</td>
+                  <td>{item.title}</td>
+                  <td>$ {item.price}</td>
+                  <td>$ {item.price * item.quantity}</td>
+                  <td>
+                    <button
+                      className="btn btn-outline-dark"
+                      onClick={() => removeItem(item.id)}
+                    >
+                      Eliminar
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colSpan={4} align="right">
+                  Total: $ {total}
+                </td>
+                <td>
+                  <button
+                    className="btn btn-outline-dark"
+                    onClick={() => clear()}
+                  >
+                    Vaciar Carrito
+                  </button>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <div className="container mt-5">
+            <div className="row justify-content-md-center">
+              <div className="col col-lg-3">
+                <div className="mb-2">
+                  <label>Nombre</label>
+                  <input
+                    className="form-control"
+                    type="text"
+                    value={nombre}
+                    onChange={(e) => setNombre(e.target.value)}
+                  />
+                </div>
+                <div className=" mb-2">
+                  <label>Telefono</label>
+                  <input
+                    className="form-control"
+                    type="text"
+                    value={telefono}
+                    onChange={(e) => setTelefono(e.target.value)}
+                  />
+                </div>
+                <div className=" mb-2">
+                  <label>Email</label>
+                  <input
+                    className="form-control"
+                    type="text"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                  <button
+                    class="btn btn-outline-dark"
+                    type="submit"
+                    onClick={crearOrden}
+                  >
+                    Crear Orden
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </>
       )}
       {cart.length === 0 && (
@@ -77,7 +128,7 @@ const CartContainer = () => {
           No agregaste nada. Anda a la <Link to="/">homepage</Link>
         </p>
       )}
-    </div>
+    </>
   );
 };
 

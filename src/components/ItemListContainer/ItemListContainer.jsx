@@ -32,7 +32,7 @@ const ItemListContainer = ({ greeting }) => {
   }, [id]);
 
   return (
-    <div className="container-fluid bg-secondary">
+    <div className="container-fluid">
       <p className="text-center fs-1 fw-bold">{greeting}</p>
       <ItemList items={items} />
     </div>
