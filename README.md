@@ -18,3 +18,7 @@ Para la elaboracion de este proyecto se utilizo las siguientes herramientas:
 1. React JS (libreria principal).
 2. React Router Dom(navegacion).
 3. Firebase (alojamiento de datos).
+
+## PARA VISUALIZAR LA PAGINA ENTRA AL SIGUIENTE LINK:
+
+https://petabby-ecommer-react.web.app/
