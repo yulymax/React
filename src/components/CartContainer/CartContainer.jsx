@@ -113,6 +113,7 @@ const CartContainer = () => {
                   <button
                     class="btn btn-outline-dark"
                     type="submit"
+                    disabled={!email || !telefono || !nombre}
                     onClick={crearOrden}
                   >
                     Crear Orden

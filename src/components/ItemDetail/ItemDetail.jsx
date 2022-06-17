@@ -13,8 +13,8 @@ const ItemDetail = ({ item }) => {
   }
 
   return (
-    <div className="container">
-      <img src={item.pictureUrl} alt="..." />
+    <div className="d-flex flex-column align-items-center">
+      <img src={item.pictureUrl} alt={item.title} className="img-fluid" />
       <h2>{item.title}</h2>
       <p>$ {item.price}</p>
 
