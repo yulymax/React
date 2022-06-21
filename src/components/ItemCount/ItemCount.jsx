@@ -4,7 +4,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   const [contador, setContador] = useState(initial);
 
   function sumar() {
-    setContador(contador + 1);
+    if (contador < stock) {
+      setContador(contador + 1);
+    }
   }
 
   function restar() {
@@ -14,9 +16,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   }
 
   function agregar() {
-    if (contador <= stock) {
-      onAdd(contador);
-    }
+    onAdd(contador);
   }
 
   return (

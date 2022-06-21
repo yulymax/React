@@ -17,8 +17,11 @@ const ItemDetail = ({ item }) => {
       <img src={item.pictureUrl} alt={item.title} className="img-fluid" />
       <h2>{item.title}</h2>
       <p>$ {item.price}</p>
+      <p>Stock Disponible: {item.stock}</p>
 
-      {!cantidadAgregada && <ItemCount stock={5} initial={1} onAdd={onAdd} />}
+      {!cantidadAgregada && (
+        <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+      )}
       {cantidadAgregada && <Link to="/cart">Terminar mi compra</Link>}
     </div>
   );
